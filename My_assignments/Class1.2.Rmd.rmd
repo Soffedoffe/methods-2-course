@@ -1,0 +1,74 @@
+---
+title: "Class1.2"
+author: "Sofie Mosegaard"
+date: "2/2/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+pacman::p_load(tidyverse)
+
+```
+
+*Sketching a regression model and data:*
+
+a) sketch hypothetical data: 
+
+line: y = 30 + 10x + e
+the line has a residuals sd = 3.9
+x value rangs from 0-4% and be Gaussian (normally distrubuted)
+
+rnorm(n, mean = n, sd = n)
+
+```{r}
+
+x <- rnorm(1000, mean = 2, sd = 0.5) 
+hist(x)
+
+error <- rnorm(1000, 0, 3.9)
+
+y <- 30+10*x+error
+
+#model/summary:
+
+model1 <- lm(y~x)
+
+#plot: 
+
+ggplot(model1, aes(x=x, y=y))+
+  geom_point() +
+  geom_smooth(method=lm)
+
+```
+
+output:
+- intercept/coefficent = 30.3
+- slope = 9.9
+= the model fits
+
+b)
+line: y = 30 + 10x + e
+sd = 10
+
+```{r}
+
+error2 <- rnorm(1000, 0, 10)
+
+#model/summary:
+
+model2 <- lm(y~x)
+
+#plot:
+
+ggplot(model2, aes(x=x, y=y))+
+  geom_point() +
+  geom_smooth(method=lm)
+
+```
+
+output:
+- intercept/coefficent = 30.3
+- slope = 9.9
+= the model fits

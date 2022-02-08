@@ -1,0 +1,87 @@
+---
+title: "Lecture1.2 - Linearity"
+author: "Sofie Mosegaard"
+date: "2/2/2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+### Definition
+
+A linear function $f(x)$ is one with the property
+
+$$
+f(ax_1 + bx_2) = af(x_1) + bf(x_2)
+$$
+
+### Problems
+
+1. Prove that $f(x) = \beta x$ is linear.
+
+
+$$
+f(x) = \beta x 
+$$
+$$
+f(ax_1 + bx_2) = \beta(ax_1 + bx_2)        
+$$
+$$
+= a \beta x_1 + b \beta x_2 
+$$
+$$
+= \beta a x_1 + \beta b x_2  
+$$
+$$               
+= a f(x_a) + b f(x_2)        
+$$
+
+$$ 
+f(ax_1 + bx_2) = af(x_1) + bf(x_2)
+$$
+
+
+$$
+qed.
+$$
+
+
+
+2. Prove that $f(x) = \beta_0 + \beta_1 x + \beta_2 x^2$ is *not* linear. 
+
+$$
+f(x) = \beta_0 + \beta_1 x + \beta_2 x^2
+$$
+$$
+f'(x) = \beta_1 x + \beta_2 *2x_2
+$$
+
+$$
+f''(x) = \beta_2 * 2
+$$
+
+This result does not show linearity. However, as a model is linear if the beta coefficients are linear, we will look at the coefficients instead of the predictors:
+$$
+f(\beta) = \beta_0 + \beta_1 x_1 + \beta x_2^2
+$$
+
+$$
+f'(\beta) = 1 + x_1 + x_2^2
+$$
+
+$$
+f''(\beta) = 0
+$$
+
+$$
+qed.
+$$
+
+The model $f(x) = \beta_0 + \beta_1 x + \beta_2 x^2$ is linear. 
+
